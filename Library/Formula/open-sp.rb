@@ -9,7 +9,9 @@ class OpenSp < Formula
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
-                          "--disable-doc-build"
+                          "--disable-doc-build",
+                          "--enable-default-catalog=#{HOMEBREW_PREFIX}/share/sgml/catalog",
+                          "--enable-default-search-path=#{HOMEBREW_PREFIX}/share/sgml"
     system "make install"
   end
 end
